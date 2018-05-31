@@ -1,0 +1,20 @@
+{
+  "name": "serverless-go",
+  "version": "1.0.0",
+  "description": "serverless-go",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-plugin-scripts": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoCagale/serverless-go.git"
+  },
+  "author": "Fernando Cagale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoCagale/serverless-go/issues"
+  },
+  "homepage": "https://github.com/FernandoCagale/serverless-go#readme"
+}

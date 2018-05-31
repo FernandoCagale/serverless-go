@@ -1,0 +1,28 @@
+service: serverless-go
+
+provider:
+  name: aws
+  runtime: go1.x
+
+functions:
+  api:
+    handler: bin/main
+    events:
+      - http:
+          path: "{proxy+}"
+          method: any
+          cors: true
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+plugins:
+  - serverless-plugin-scripts
+
+custom:
+  scripts:
+    hooks:
+      package:initialize: make compile

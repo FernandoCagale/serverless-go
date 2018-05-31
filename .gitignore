@@ -10,3 +10,13 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+.serverless
+
+bin
+
+node_modules
+
+vendor
+
+serverless.env.yml
