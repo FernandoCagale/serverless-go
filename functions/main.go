@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/FernandoCagale/serverless-go/src/handlers"
+	"github.com/FernandoCagale/serverless-go/src/middleware"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/awslabs/aws-lambda-go-api-proxy/gorillamux"
@@ -17,8 +18,13 @@ func Handler(req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse,
 	if !initialized {
 		r := mux.NewRouter()
 
-		r.HandleFunc("/api", handlers.Api).Methods("GET")
-		r.HandleFunc("/public", handlers.Public).Methods("GET")
+		r.HandleFunc("/task", handlers.Create).Methods("POST")
+		r.HandleFunc("/task", handlers.FindAll).Methods("GET")
+		r.HandleFunc("/task/{id}", handlers.FindById).Methods("GET")
+		r.HandleFunc("/task/{id}", handlers.UpdateById).Methods("PUT")
+		r.HandleFunc("/task/{id}", handlers.DeleteById).Methods("DELETE")
+
+		r.Use(middleware.BindDb)
 
 		gorillaLambda = gorillamux.New(r)
 		initialized = true

@@ -13,4 +13,11 @@
 [[constraint]]
   name = "github.com/gorilla/mux"
   branch = "master"
-  
+
+[[constraint]]
+  name = "github.com/lib/pq"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/jinzhu/gorm"
+  version = "1.0.0"

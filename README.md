@@ -4,12 +4,16 @@ serverless-go
 
 - [x] Build serverless
 - [ ] Stage serverless
-- [ ] Environment serverless
-- [ ] PostgreSQL(GORM)
+- [X] Environment serverless
+- [X] PostgreSQL(GORM)
+- [ ] Migrations(GOOSE)
 - [ ] JWT
 - [ ] Test
-- [ ] CI(Gitlab)
+- [ ] CI(Gitlab - CircleCI)
 
+`Environment`
+
+Rename `serverless.env.example.yml` to `serverless.env.yml`
 
 `Install serverless globally`
 

@@ -3,6 +3,8 @@ service: serverless-go
 provider:
   name: aws
   runtime: go1.x
+  environment:
+    DATASTORE_URL: ${file(./serverless.env.yml):${opt:stage, self:provider.stage}.DATASTORE_URL}  
 
 functions:
   api:
