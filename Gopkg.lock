@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/auth0/go-jwt-middleware"
+  packages = ["."]
+  revision = "5493cabe49f7bfa6e2ec444a09d334d90cd4e2bd"
+
+[[projects]]
   name = "github.com/aws/aws-lambda-go"
   packages = [
     "events",
@@ -20,6 +26,12 @@
     "gorillamux"
   ]
   revision = "6986cdf6237e77c4d9a721a1b153e904fa384a24"
+
+[[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -54,9 +66,24 @@
   ]
   revision = "90697d60dd844d5ef6ff15135d0203f65d2f53b8"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/urfave/negroni"
+  packages = ["."]
+  revision = "22c5532ea862c34fdad414e90f8cc00b4f6f4cab"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = [
+    "bcrypt",
+    "blowfish"
+  ]
+  revision = "df8d4716b3472e4a531c33cedbe537dae921a1a9"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "abb53d770326d1f06ea4d5c0bb9ae14424e076b1c01d65749c7743bcb8c8a25a"
+  inputs-digest = "d2840a857f4e31dd035d451ed92594d0843611de2a05654d9690d0720cbbe649"
   solver-name = "gps-cdcl"
   solver-version = 1
