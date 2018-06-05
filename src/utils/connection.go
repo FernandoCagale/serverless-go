@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"fmt"
+	"errors"
 	"net/http"
 
 	"github.com/gorilla/context"
@@ -12,5 +12,5 @@ func GetConnection(r *http.Request) (*gorm.DB, error) {
 	if rv := context.Get(r, "db"); rv != nil {
 		return rv.(*gorm.DB), nil
 	}
-	return nil, fmt.Errorf("Connection invalid")
+	return nil, errors.New("Connection invalid")
 }
