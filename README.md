@@ -5,7 +5,7 @@
 - [X] Environment serverless
 - [X] PostgreSQL(GORM)
 - [X] Migrations(GOOSE)
-- [ ] JWT
+- [X] JWT
 - [ ] Test
 - [ ] CI(Gitlab - CircleCI)
 

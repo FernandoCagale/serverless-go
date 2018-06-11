@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/FernandoCagale/serverless-go/src/datastore"
 	errors "github.com/FernandoCagale/serverless-go/src/error"
 	"github.com/FernandoCagale/serverless-go/src/models"
 	"github.com/FernandoCagale/serverless-go/src/render"
-	"github.com/FernandoCagale/serverless-go/src/utils"
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/jinzhu/gorm"
 )
@@ -17,7 +17,7 @@ import (
 func Login(w http.ResponseWriter, r *http.Request) {
 	auth := new(models.Auth)
 
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, errors.AddInternalServerError(err.Error()))
 		return

@@ -24,3 +24,7 @@ func AddUnauthorizedError(message string) ResponseError {
 func AddBadRequestError(message string) ResponseError {
 	return ResponseError{http.StatusBadRequest, message}
 }
+
+func AddMethodNotAllowedError(message string) ResponseError {
+	return ResponseError{http.StatusMethodNotAllowed, message}
+}

@@ -5,16 +5,16 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/FernandoCagale/serverless-go/src/datastore"
 	"github.com/FernandoCagale/serverless-go/src/error"
 	"github.com/FernandoCagale/serverless-go/src/models"
 	"github.com/FernandoCagale/serverless-go/src/render"
-	"github.com/FernandoCagale/serverless-go/src/utils"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 )
 
 func FindAll(w http.ResponseWriter, r *http.Request) {
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, error.AddInternalServerError(err.Error()))
 		return
@@ -38,7 +38,7 @@ func FindById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, error.AddInternalServerError(err.Error()))
 		return
@@ -76,7 +76,7 @@ func UpdateById(w http.ResponseWriter, r *http.Request) {
 
 	defer r.Body.Close()
 
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, error.AddInternalServerError(err.Error()))
 		return
@@ -109,7 +109,7 @@ func DeleteById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, error.AddInternalServerError(err.Error()))
 		return
@@ -144,7 +144,7 @@ func Create(w http.ResponseWriter, r *http.Request) {
 
 	defer r.Body.Close()
 
-	db, err := utils.GetConnection(r)
+	db, err := datastore.GetConnection(r)
 	if err != nil {
 		render.ResponseError(w, error.AddInternalServerError(err.Error()))
 		return
